@@ -1,0 +1,88 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.left {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    min-height: 100vh;
+}
+
+.left #pocketNotes {
+    padding-top: 3vh;
+    padding-left: 1vw;
+    font-size: 30px;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    font-family: var(--font-roboto);
+    color: #000;
+    text-align: left;
+}
+
+
+
+
+.notesGroup {
+    margin-top: 7vh;
+    margin-left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+
+.createNote {
+    background-color: black;
+    padding-top: 0px;
+    padding-bottom: 14px;
+    width: 300px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 23px;
+}
+
+.notesList {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+
+
+
+.notes {
+    margin-top: 25px;
+    height: 70px;
+    display: flex;
+}
+
+.logo {
+    border-radius: 50%;
+    background-color: #0047ff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23.9px;
+    letter-spacing: 0.02em;
+    line-height: 97.69%;
+    font-family: var(--font-roboto);
+    color: #fff;
+}
+
+.noteheading {
+    margin-left: 30px;
+    font-size: 20.67px;
+    letter-spacing: 0.02em;
+    font-weight: 350;
+    font-family: var(--font-roboto);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
