@@ -1,12 +1,11 @@
 import React from "react";
-import NotesappNav from "./components/NotesappNav.jsx";
-import NotesappBody from "./components/NotesappBody.jsx";
+import CombinedComponent from './pages/Combined';
+
 const App = () => {
   return (
-    <div style={{display: "flex"}}>
-      <NotesappNav />
-      <NotesappBody />
-    </div>        
+    <div>
+      <CombinedComponent />
+    </div>       
   )
 }
 

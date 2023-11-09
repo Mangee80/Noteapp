@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ModalComponent from "./ModalComponent";
-import NotesBody from "./NotesappBody"
 import styles from "./NotesappNav.module.css";
 
-const NotesappNav = () => {
+const NotesappNav = ({ setSelectedObject }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formDataArray, setFormDataArray] = useState([]);
-  const [selectedObject, setSelectedObject] = useState(null);
   const localStorageKey = 'formData';
 
   useEffect(() => {
@@ -26,7 +24,6 @@ const NotesappNav = () => {
   };
 
   
-  
   const handleFormSubmit = (data) => {
     const initials = data.groupName.slice(0, 2).toUpperCase();
     const updatedFormData = [...formDataArray, { ...data, initials }];
@@ -38,12 +35,10 @@ const NotesappNav = () => {
     closeModal();
   }
 
-  
-  
   const handleDivClick = (object) => {
-    setSelectedObject(object); 
+    setSelectedObject(object) 
   };
-
+  
   
   return (
     <>
@@ -65,8 +60,7 @@ const NotesappNav = () => {
             ))}
           </div>
         </div>
-        <NotesBody selectedObject={selectedObject} />
-      </div>  
+      </div>
     </>
   )
 }
