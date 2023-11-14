@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 function ModalComponent({ isOpen, onRequestClose, onFormSubmit }) {
   const [groupName, setGroupName] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
-  const colors = ['Red', 'Blue', 'Green', 'Yellow', 'Purple']; // Add more colors as needed
+  const colors = ['red', 'blue', 'green', 'yellow', 'purple']; // Add more colors as needed
 
   const handleColorSelection = (color) => {
     setSelectedColor(color);

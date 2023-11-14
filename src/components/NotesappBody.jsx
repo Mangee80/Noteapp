@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from "./NotesappBody.module.css";
 import img from "../assets/img.png";
 import Vector from "../assets/Vector.svg";
+import Vector2 from "../assets/Vector2.svg";
+import Vector3 from "../assets/Vector3.svg";
 
 const NotesappBody = ({ selectedObject }) => {
   const [isSelectedHead, setIsSelectedHead] = useState(false);
@@ -44,6 +46,7 @@ const NotesappBody = ({ selectedObject }) => {
       {isSelectedHead ? (
         <div className={styles.body_clicked}>
           <div className={styles.heading}>
+            <div className={styles.backBtn}><img style={{height: "100%", width: "100%"}} src={Vector3} /></div>
             <div className={styles.logo}>{selectedObject.initials}</div>
             <p className={styles.noteheading}>{selectedObject.groupName}</p>
           </div>
@@ -52,7 +55,7 @@ const NotesappBody = ({ selectedObject }) => {
             {tasks.map((task, index) => (
               <div key={index} className={styles.taskItem}>
                 <div className={styles.dateTimeColumn}>
-                  <p>{task.time}</p>
+                  <p style={{paddingTop: "5px", marginBottom: "5px"}}>{task.time}</p>
                   <p>{task.date}</p>
                 </div>
                 <div className={styles.taskColumn}>
@@ -71,11 +74,15 @@ const NotesappBody = ({ selectedObject }) => {
                 placeholder="Enter your task description"
                 rows="4"
               ></textarea>
-              <button onClick={handleSaveTask}>Save Task</button>
+              <div className={styles.submitbtn} onClick={handleSaveTask}>
+              <img style={{height: "100%", width: "100%"}} src={Vector2} />
+              </div>
             </div>
           </div>
 
-          <div className={styles.footer}></div>
+          <div className={styles.footer}>
+            
+          </div>
         </div>
       ) : (
         <div className={styles.body}>
@@ -86,7 +93,7 @@ const NotesappBody = ({ selectedObject }) => {
             <p style={{fontSize:"22px", letterSpacing: "0.02em", color: "#292929"}}>Send and receive messages without keeping your phone online.</p>
             <p style={{fontSize:"22px", letterSpacing: "0.02em", color: "#292929"}}>Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p>
             <div className={styles.footerbody}>
-                <div style={{height: "21px", width: "16.9"}}><img style={{height: "100%", width: "100%"}} src={Vector} /></div>
+                <div style={{height: "21px", width: "16.9px"}}><img style={{height: "100%", width: "100%"}} src={Vector} /></div>
                 <p>end-to-end encrypted</p>
             </div>
         </div>

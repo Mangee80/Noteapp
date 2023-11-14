@@ -6,6 +6,7 @@ const NotesappNav = ({ setSelectedObject }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formDataArray, setFormDataArray] = useState([]);
+  const [selectedFormData, setSelectedFormData] = useState(null);
   const localStorageKey = 'formData';
 
   useEffect(() => {
@@ -36,7 +37,8 @@ const NotesappNav = ({ setSelectedObject }) => {
   }
 
   const handleDivClick = (object) => {
-    setSelectedObject(object) 
+    setSelectedObject(object);
+    setSelectedFormData(object);
   };
   
   
@@ -53,7 +55,11 @@ const NotesappNav = ({ setSelectedObject }) => {
           />
           <div className={styles.notesList}>
             {formDataArray.map((formData, index) => (
-              <div className={styles.notes} key={index} onClick={() => handleDivClick(formData)}>
+              <div
+                className={`${styles.notes} ${selectedFormData === formData ? styles.selected : ''}`}
+                key={index}
+                onClick={() => handleDivClick(formData)}
+              >
                 <div className={styles.logo} style={{ backgroundColor: formData.color }}>{formData.initials}</div>
                 <p className={styles.noteheading}>{formData.groupName}</p>
               </div>

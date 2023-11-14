@@ -74,29 +74,34 @@ body {
 }
 
 .content {
-    height: 62vh;
-    padding: 5vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
 }
 
 .taskItem {
+    position: relative;
     height: 30%;
     width: 100%;
-    margin: 2vh;
     display: flex;
 }
 
 
 .dateTimeColumn {
-    font-size: 18px;
+    font-size: 17.9px;
+    margin-right: 10px;
+    letter-spacing: 0.01em;
+    line-height: 108.19%;
+    font-family: var(--font-roboto);
+    color: #000;
+    text-align: left;
+    font-weight: normal;
 }
 
 .taskColumn {
-    top: 0px;
-    font-size: 18px;
+    font-size: 18.5px;
     letter-spacing: 0.04em;
-    margin-left: 30px;
     line-height: 160.19%;
     font-family: var(--font-roboto);
     color: #000;
@@ -104,28 +109,58 @@ body {
     display: inline-block;
     height: 100%;
     width: 75%;
-    font-weight: 100;
     word-wrap: break-word;
 }
 
-
-
 .inputBox {
-    height: 25vh;
-    bottom: 3vh;
+    position: relative;
+    height: 23.3vh;
+    width: 100%;
+    bottom: 1.9vh;
+    background-color: #E8E8E8;
+    border-bottom-left-radius: 20px;
 }
-
 
 .inputTextArea {
-    height: 100%;
-    width: 100%;
-    border: 2px solid #3498db;
+    position: relative;
     border-radius: 8px;
-    padding: 8px;
+    
+    top: 17px;
+    left: 30px;
+    width: 94.4%;
+    height: 17.4vh;
+    padding: 5px;
+    resize: none;
 }
+
+.submitbtn {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    height: 35px;
+    width: 30px;
+  }
 
 .footerbody {
     position: absolute;
     display: flex;
     bottom: 0vh;
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    bottom: 0vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+
+.backBtn {
+    position: relative;
+    left: 10px;
+    top: 21px;
+    height: 18px;
+    width: 25px;
+    display: none;
 }

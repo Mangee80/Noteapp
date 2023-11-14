@@ -50,6 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
+    overflow: auto;
 }
 
 
@@ -62,6 +63,9 @@ body {
     border-bottom-left-radius: 25px;
     height: 70px;
     display: flex;
+}
+
+.selected {
     background-color: #f7ecdc;
 }
 
