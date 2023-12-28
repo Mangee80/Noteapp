@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import ModalComponent from "./ModalComponent";
 import styles from "./NotesappNav.module.css";
-
+import CreateGroupForm from './Forms';
 const NotesappNav = ({ setSelectedObject }) => {
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [formDataArray, setFormDataArray] = useState([]);
+  const [isFormVisible, setIsFormVisible] = useState(false);
   const [selectedFormData, setSelectedFormData] = useState(null);
   const localStorageKey = 'formData';
 
@@ -16,14 +15,6 @@ const NotesappNav = ({ setSelectedObject }) => {
     }
   }, []);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   
   const handleFormSubmit = (data) => {
     const initials = data.groupName.slice(0, 2).toUpperCase();
@@ -32,8 +23,10 @@ const NotesappNav = ({ setSelectedObject }) => {
 
     // Store the data in local storage
     localStorage.setItem(localStorageKey, JSON.stringify(updatedFormData));
+    
 
-    closeModal();
+    console.log('Form data submitted:', data);
+    setIsFormVisible(false);
   }
 
   const handleDivClick = (object) => {
@@ -47,12 +40,7 @@ const NotesappNav = ({ setSelectedObject }) => {
       <div className={styles.left}>
         <p id={styles.pocketNotes}>Pocket Notes</p>
         <div className={styles.notesGroup}>
-          <button className={styles.createNote} onClick={openModal}><span style={{fontSize: "40px", alignContent: "baseline"}}>+ </span> Create Notes group</button>
-          <ModalComponent
-            isOpen={isModalOpen}
-            onRequestClose={closeModal}
-            onFormSubmit={handleFormSubmit}
-          />
+          <button className={styles.createNote} onClick={() => setIsFormVisible(true)}><span style={{fontSize: "40px", alignContent: "baseline"}}>+ </span> Create Notes group</button>
           <div className={styles.notesList}>
             {formDataArray.map((formData, index) => (
               <div
@@ -60,13 +48,17 @@ const NotesappNav = ({ setSelectedObject }) => {
                 key={index}
                 onClick={() => handleDivClick(formData)}
               >
-                <div className={styles.logo} style={{ backgroundColor: formData.color }}>{formData.initials}</div>
+                <div className={styles.logo} style={{ backgroundColor: formData.selectedColor }}>{formData.initials}</div>
                 <p className={styles.noteheading}>{formData.groupName}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {isFormVisible && (
+        <CreateGroupForm onClose={() => setIsFormVisible(false)} onSubmit={handleFormSubmit} />
+      )}
     </>
   )
 }

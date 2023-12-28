@@ -4,7 +4,6 @@ import img from "../assets/img.png";
 import Vector from "../assets/Vector.svg";
 import Vector2 from "../assets/Vector2.svg";
 import Vector3 from "../assets/Vector3.svg";
-
 const NotesappBody = ({ selectedObject }) => {
   const [isSelectedHead, setIsSelectedHead] = useState(false);
   const [taskDescription, setTaskDescription] = useState('');
@@ -47,7 +46,8 @@ const NotesappBody = ({ selectedObject }) => {
         <div className={styles.body_clicked}>
           <div className={styles.heading}>
             <div className={styles.backBtn}><img style={{height: "100%", width: "100%"}} src={Vector3} /></div>
-            <div className={styles.logo}>{selectedObject.initials}</div>
+            <div className={styles.logo} style={{ backgroundColor: selectedObject.selectedColor }}>{selectedObject.initials}</div>
+            {console.log({selectedObject})}
             <p className={styles.noteheading}>{selectedObject.groupName}</p>
           </div>
 
@@ -79,10 +79,7 @@ const NotesappBody = ({ selectedObject }) => {
               </div>
             </div>
           </div>
-
-          <div className={styles.footer}>
-            
-          </div>
+          <p style={{backgroundColor: "white", color: "white"}}>Hi</p>
         </div>
       ) : (
         <div className={styles.body}>

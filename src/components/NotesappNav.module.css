@@ -37,7 +37,7 @@ body {
     background-color: black;
     padding-top: 0px;
     padding-bottom: 14px;
-    width: 300px;
+    width: 95%;
     border-radius: 50px;
     color: #fff;
     font-size: 23px;
@@ -63,6 +63,7 @@ body {
     border-bottom-left-radius: 25px;
     height: 70px;
     display: flex;
+    cursor: pointer;
 }
 
 .selected {

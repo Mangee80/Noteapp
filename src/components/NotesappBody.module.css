@@ -39,7 +39,8 @@ body {
 
 
 .heading {
-    height: 8vh;
+    position: relative;
+    height: 7vh;
     padding: 10px;
     background-color: #E8E8E8;
     display: flex;
@@ -74,29 +75,34 @@ body {
 }
 
 .content {
-    height: 65vh;
+    position: relative;
+    height: 70%;
+    padding: 1.8vh 5vw 3vh 3vw;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    box-sizing: border-box;
 }
 
 .taskItem {
     position: relative;
-    height: 30%;
+    height: 14vh;
     width: 100%;
+    margin-top: 30px;
     display: flex;
+    box-sizing: border-box;
 }
 
 
 .dateTimeColumn {
-    font-size: 17.9px;
-    margin-right: 10px;
+    font-size: 18px;
+    margin-right: 54px;
     letter-spacing: 0.01em;
     line-height: 108.19%;
     font-family: var(--font-roboto);
     color: #000;
     text-align: left;
     font-weight: normal;
+    box-sizing: border-box;
 }
 
 .taskColumn {
@@ -114,9 +120,8 @@ body {
 
 .inputBox {
     position: relative;
-    height: 23.3vh;
+    height: 23.3%;
     width: 100%;
-    bottom: 1.9vh;
     background-color: #E8E8E8;
     border-bottom-left-radius: 20px;
 }
@@ -124,7 +129,6 @@ body {
 .inputTextArea {
     position: relative;
     border-radius: 8px;
-    
     top: 17px;
     left: 30px;
     width: 94.4%;
@@ -139,22 +143,13 @@ body {
     right: 30px;
     height: 35px;
     width: 30px;
-  }
+}
 
 .footerbody {
     position: absolute;
     display: flex;
     bottom: 0vh;
 }
-
-.footer {
-    position: relative;
-    display: flex;
-    bottom: 0vh;
-    width: 100%;
-    background-color: #fff;
-}
-
 
 .backBtn {
     position: relative;
