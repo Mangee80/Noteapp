@@ -76,10 +76,11 @@ body {
 
 .content {
     position: relative;
-    height: 70%;
-    padding: 1.8vh 5vw 3vh 3vw;
+    height: 70vh;
+    padding: 1vh 5vw 3vh 3vw;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     box-sizing: border-box;
 }
 
@@ -118,23 +119,27 @@ body {
     word-wrap: break-word;
 }
 
+
 .inputBox {
     position: relative;
     height: 23.3%;
     width: 100%;
     background-color: #E8E8E8;
     border-bottom-left-radius: 20px;
+    box-sizing: border-box;
 }
 
 .inputTextArea {
     position: relative;
+    font-size: 18px;
     border-radius: 8px;
     top: 17px;
     left: 30px;
-    width: 94.4%;
+    width: 95%;
     height: 17.4vh;
-    padding: 5px;
+    padding: 10px;
     resize: none;
+    box-sizing: border-box;
 }
 
 .submitbtn {

@@ -25,11 +25,14 @@ const NotesappBody = ({ selectedObject }) => {
   
   const handleSaveTask = () => {
     if (taskDescription) {
-      const currentDate = new Date().toLocaleDateString();
+      const currentDate = new Date()
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const formattedDate = currentDate.toLocaleDateString('en-US', options);
       const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      
       const newTask = {
         description: taskDescription,
-        date: currentDate,
+        date: formattedDate,
         time: currentTime,
       };
 
@@ -71,7 +74,7 @@ const NotesappBody = ({ selectedObject }) => {
                 className={styles.inputTextArea}
                 value={taskDescription}
                 onChange={handleTaskDescriptionChange}
-                placeholder="Enter your task description"
+                placeholder="Enter your task description...................."
                 rows="4"
               ></textarea>
               <div className={styles.submitbtn} onClick={handleSaveTask}>
