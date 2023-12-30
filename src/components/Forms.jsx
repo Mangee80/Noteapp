@@ -42,7 +42,7 @@ const Forms = ({ onClose, onSubmit }) => {
             ></div>
           ))}
         </div>
-        <button style={{backgroundColor: 'pink', position: 'absolute', right: '18px' , bottom: '10px'}} type="submit" onClick={handleSubmit}>Create</button>
+        <button className={styles.butn}type="submit" onClick={handleSubmit}>Create</button>
     </div>
   );
 };
